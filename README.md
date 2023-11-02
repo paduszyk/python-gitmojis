@@ -2,6 +2,7 @@
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat-square&logo=pre-commit)][pre-commit.ci]
 
+[![nox](https://img.shields.io/badge/%F0%9F%A6%8A-Nox-D85E00.svg?style=flat-square)][nox]
 [![ruff](https://img.shields.io/endpoint?style=flat-square&url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)][ruff]
 [![mypy](https://img.shields.io/badge/type--checked-mypy-blue?style=flat-square)][mypy]
 [![black](https://img.shields.io/badge/code%20style-black-black?style=flat-square)][black]
@@ -36,5 +37,6 @@ Released under the [MIT License][license].
 [gitmoji-website]: https://gitmoji.dev
 [license]: https://github.com/paduszyk/python-gitmojis/blob/main/LICENSE
 [mypy]: https://github.com/python/mypy
+[nox]: https://github.com/wntrblm/nox
 [pre-commit.ci]: https://results.pre-commit.ci/latest/github/paduszyk/python-gitmojis/main
 [ruff]: https://github.com/astral-sh/ruff
