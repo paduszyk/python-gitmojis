@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v4.5.0'
+    hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+ci:
+  autofix_commit_msg:
+    🚨 [pre-commit.ci] Fix errors raised by `pre-commit` hooks
+  autoupdate_commit_msg:
+    ⬆️ [pre-commit.ci] Update versions of `pre-commit` hooks

@@ -11,6 +11,11 @@ version = "0.0.0"
 requires-python = ">= 3.10"
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+  "pre-commit",
+]
+
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]
 where = ["src"]
