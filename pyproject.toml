@@ -10,6 +10,7 @@ name = "python-gitmojis"
 version = "0.0.0"
 requires-python = ">= 3.10"
 dependencies = [
+  "click",
   "requests",
 ]
 
@@ -26,6 +27,7 @@ lint = [
 ]
 test = [
   "pytest",
+  "pytest-click",
   "pytest-cov",
   "pytest-custom-exit-code",
   "pytest-mock",
