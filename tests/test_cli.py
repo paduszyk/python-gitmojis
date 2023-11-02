@@ -1,7 +1,20 @@
 import click
 
-from gitmojis.cli import gitmojis_cli
+from gitmojis.cli import commands as commands_module
+from gitmojis.cli import get_commands, gitmojis_cli
 from gitmojis.model import Guide
+
+
+def test_get_commands_registers_command_from_commands_module(mocker):
+    @click.command()
+    def command():
+        pass
+
+    mocker.patch.dict(commands_module.__dict__, {"command": command})
+
+    commands = get_commands()
+
+    assert command in commands
 
 
 def test_gitmojis_cli_passes_guide_to_context(mocker, cli_runner):
