@@ -8,6 +8,12 @@ from gitmojis.cli import get_commands, gitmojis_cli
 from gitmojis.model import Guide
 
 
+def test_gitmojis_cli_runs_as_entry_point():
+    result = subprocess.run(["gitmojis"])
+
+    assert result.returncode == 0
+
+
 def test_gitmojis_cli_runs_from_package_main_module():
     result = subprocess.run([sys.executable, "-m", "gitmojis"])
 

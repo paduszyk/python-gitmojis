@@ -33,6 +33,9 @@ test = [
   "pytest-mock",
 ]
 
+[project.scripts]
+"gitmojis" = "gitmojis.__main__:main"
+
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]
 where = ["src"]
