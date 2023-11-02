@@ -10,6 +10,12 @@ repos:
         files: (tests)
         args:
           - --pytest-test-first
+      - id: pretty-format-json
+        args:
+          - --autofix
+          - --indent=2
+          - --no-ensure-ascii
+          - --no-sort-keys
       - id: trailing-whitespace
   - repo: https://github.com/psf/black
     rev: '23.10.1'
