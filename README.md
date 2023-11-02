@@ -1,5 +1,7 @@
 # python-gitmojis
 
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat-square&logo=pre-commit)][pre-commit.ci]
+
 ## Summary
 
 This package provides a few simple utilities to apply the official
@@ -28,3 +30,4 @@ Released under the [MIT License][license].
 [gitmoji-repository]: https://github.com/carloscuesta/gitmoji
 [gitmoji-website]: https://gitmoji.dev
 [license]: https://github.com/paduszyk/python-gitmojis/blob/main/LICENSE
+[pre-commit.ci]: https://results.pre-commit.ci/latest/github/paduszyk/python-gitmojis/main
