@@ -20,6 +20,12 @@ lint = [
   "mypy",
   "ruff",
 ]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-custom-exit-code",
+  "pytest-mock",
+]
 
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]
