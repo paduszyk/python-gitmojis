@@ -2,6 +2,7 @@ import subprocess
 import sys
 
 import click
+import requests
 
 from gitmojis.cli import commands as commands_module
 from gitmojis.cli import get_commands, gitmojis_cli
@@ -45,3 +46,19 @@ def test_gitmojis_cli_passes_guide_to_context(mocker, cli_runner):
     result = cli_runner.invoke(gitmojis_cli, "command")
 
     assert result.exit_code == 0
+
+
+def test_sync_command_dumps_api_data_to_backup_file(tmp_path, mocker, cli_runner):
+    # Mock the backup file as empty file
+    gitmoji_api_path = tmp_path / "gitmojis.json"
+    mocker.patch("gitmojis.defaults.GITMOJI_API_PATH", gitmoji_api_path)
+
+    # Mock response
+    response = mocker.Mock(spec_set=requests.Response)
+    response.json.return_value = {"gitmojis": []}
+    mocker.patch("requests.get", return_value=response)
+
+    # Run command
+    cli_runner.invoke(gitmojis_cli, ["sync"])
+
+    assert gitmoji_api_path.read_text(encoding="UTF-8") == "[]\n"
