@@ -17,3 +17,10 @@ dist/
 
 # Ruff
 .ruff_cache/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+coverage.xml
