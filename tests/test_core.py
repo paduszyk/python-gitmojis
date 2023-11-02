@@ -1,7 +1,8 @@
 import pytest
 import requests
 
-from gitmojis.core import GITMOJI_API_KEY, fetch_guide
+from gitmojis import defaults
+from gitmojis.core import fetch_guide
 from gitmojis.exceptions import ResponseJsonError
 from gitmojis.model import Guide
 
@@ -12,7 +13,7 @@ def response(mocker):
 
 
 def test_fetch_guide_creates_guide_from_api_response_json(mocker, response):
-    response.json.return_value = {GITMOJI_API_KEY: []}
+    response.json.return_value = {defaults.GITMOJI_API_KEY: []}
 
     mocker.patch("requests.get", return_value=response)
 
