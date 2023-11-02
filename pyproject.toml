@@ -20,6 +20,12 @@ lint = [
   "mypy",
   "ruff",
 ]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-custom-exit-code",
+  "pytest-mock",
+]
 
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]
@@ -71,13 +77,50 @@ select = [
   "A",     # flake8-builtins
   "C4",    # flake8-comprehensions
   "T20",   # flake8-print
+  "PT",    # flake8-pytest-style
   "Q",     # flake8-quotes
   "PTH",   # flake8-use-pathlib
 ]
-ignore = ["E501", "N818", "D1", "D205"]
+ignore = ["E501", "N818", "D1", "D205", "PT004", "PT016"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
 
 [tool.ruff.isort]
 known-first-party = ["gitmojis"]
+
+# Pytest
+# https://docs.pytest.org/en/latest/reference/reference.html#configuration-options
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "-q",
+  "--strict-markers",
+  "--cov=src/",
+  "--cov-branch",
+  "--cov-append",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-report=xml",
+  "--suppress-no-test-exit-code",
+]
+pythonpath = [".", "src"]
+testpaths = ["tests/"]
+
+# Coverage.py
+# https://coverage.readthedocs.io/en/latest/config.html
+
+[tool.coverage.report]
+exclude_also = [
+  "@(abc\\.)?abstractmethod",
+  "@overload",
+  "class .*\\bProtocol\\):",
+  "def __repr__",
+  "if __name__ == .__main__.:",
+  "if 0:",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "if TYPE_CHECKING:",
+  "raise AssertionError",
+  "raise NotImplementedError",
+]
