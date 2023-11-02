@@ -20,7 +20,7 @@ def fetch_guide() -> Guide:
         ResponseJsonError: If the API response doesn't contain the expected JSON data.
     """
     try:
-        response = requests.get(defaults.GITMOJI_API_URL)
+        (response := requests.get(defaults.GITMOJI_API_URL)).raise_for_status()
 
         if (gitmojis_json := response.json().get(defaults.GITMOJI_API_KEY)) is None:
             raise ResponseJsonError
