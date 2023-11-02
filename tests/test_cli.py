@@ -14,7 +14,7 @@ def test_gitmojis_cli_runs_as_entry_point():
     assert result.returncode == 0
 
 
-def test_gitmojis_cli_runs_from_package_main_module():
+def test_gitmojis_cli_runs_as_python_script():
     result = subprocess.run([sys.executable, "-m", "gitmojis"])
 
     assert result.returncode == 0
