@@ -29,3 +29,15 @@ def test_fetch_guide_raises_error_if_gitmoji_api_key_not_in_response_json(mocker
 
     with pytest.raises(ResponseJsonError):
         fetch_guide()
+
+
+def test_fetch_guide_fall_back_to_backup_data_if_request_error(mocker):
+    mocker.patch("pathlib.Path.open", mocker.mock_open(read_data="[]"))
+    mocker.patch("requests.get", side_effect=requests.RequestException)
+
+    json_load = mocker.patch("json.load")
+
+    guide = fetch_guide()
+
+    assert json_load.called
+    assert guide == Guide(gitmojis=[])

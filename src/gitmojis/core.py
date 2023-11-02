@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from . import defaults
@@ -17,10 +19,14 @@ def fetch_guide() -> Guide:
     Raises:
         ResponseJsonError: If the API response doesn't contain the expected JSON data.
     """
-    response = requests.get(defaults.GITMOJI_API_URL)
+    try:
+        response = requests.get(defaults.GITMOJI_API_URL)
 
-    if (gitmojis_json := response.json().get(defaults.GITMOJI_API_KEY)) is None:
-        raise ResponseJsonError
+        if (gitmojis_json := response.json().get(defaults.GITMOJI_API_KEY)) is None:
+            raise ResponseJsonError
+    except requests.RequestException:
+        with defaults.GITMOJI_API_PATH.open(encoding="UTF-8") as f:
+            gitmojis_json = json.load(f)
 
     guide = Guide(gitmojis=[Gitmoji(**gitmoji_json) for gitmoji_json in gitmojis_json])
 
