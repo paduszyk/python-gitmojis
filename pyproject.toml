@@ -87,3 +87,39 @@ convention = "google"
 
 [tool.ruff.isort]
 known-first-party = ["gitmojis"]
+
+# Pytest
+# https://docs.pytest.org/en/latest/reference/reference.html#configuration-options
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "-q",
+  "--strict-markers",
+  "--cov=src/",
+  "--cov-branch",
+  "--cov-append",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-report=xml",
+  "--suppress-no-test-exit-code",
+]
+pythonpath = [".", "src"]
+testpaths = ["tests/"]
+
+# Coverage.py
+# https://coverage.readthedocs.io/en/latest/config.html
+
+[tool.coverage.report]
+exclude_also = [
+  "@(abc\\.)?abstractmethod",
+  "@overload",
+  "class .*\\bProtocol\\):",
+  "def __repr__",
+  "if __name__ == .__main__.:",
+  "if 0:",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "if TYPE_CHECKING:",
+  "raise AssertionError",
+  "raise NotImplementedError",
+]
