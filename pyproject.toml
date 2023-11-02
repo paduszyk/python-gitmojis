@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# Project metadata (PEP 621)
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+
+[project]
+name = "python-gitmojis"
+version = "0.0.0"
+requires-python = ">= 3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["gitmojis*"]
+where = ["src"]

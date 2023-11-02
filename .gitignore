@@ -1,2 +1,13 @@
 # IDE
 .vscode/
+
+# Environment
+.venv
+
+# Byte-compiled files
+__pycache__/
+
+# Distribution / packaging files
+build/
+dist/
+*.egg-info/
