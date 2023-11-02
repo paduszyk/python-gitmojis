@@ -35,6 +35,9 @@ test = [
 include = ["gitmojis*"]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"gitmojis" = ["assets*"]
+
 # Black
 # https://black.readthedocs.io/en/stable/usage_and_configuration/
 
