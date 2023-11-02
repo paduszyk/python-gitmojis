@@ -77,10 +77,11 @@ select = [
   "A",     # flake8-builtins
   "C4",    # flake8-comprehensions
   "T20",   # flake8-print
+  "PT",    # flake8-pytest-style
   "Q",     # flake8-quotes
   "PTH",   # flake8-use-pathlib
 ]
-ignore = ["E501", "N818", "D1", "D205"]
+ignore = ["E501", "N818", "D1", "D205", "PT004", "PT016"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
