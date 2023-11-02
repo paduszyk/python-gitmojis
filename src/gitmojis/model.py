@@ -16,9 +16,9 @@ class Gitmoji:
         description: A brief description of changes introduced by commits and pull
             requests marked by the Gitmoji.
         name: The user-defined name or identifier of the Gitmoji.
-        semver: The Semantic Versioning level affected by the commits/PRs marked by the
-            emoji associated with the Gitmoji, if specified. May be `None` or one of
-            the following: `"major"`, `"minor"`, `"patch"`.
+        semver: The Semantic Versioning level affected by the commits or pull requests
+            marked by the emoji associated with the Gitmoji, if specified. May be `None`
+            or one of the following: `"major"`, `"minor"`, `"patch"`.
     """
 
     emoji: str
