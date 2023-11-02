@@ -9,7 +9,9 @@ build-backend = "setuptools.build_meta"
 name = "python-gitmojis"
 version = "0.0.0"
 requires-python = ">= 3.10"
-dependencies = []
+dependencies = [
+  "requests",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -20,6 +22,7 @@ lint = [
   "black",
   "mypy",
   "ruff",
+  "types-requests",
 ]
 test = [
   "pytest",
