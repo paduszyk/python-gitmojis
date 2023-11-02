@@ -1,8 +1,17 @@
+import subprocess
+import sys
+
 import click
 
 from gitmojis.cli import commands as commands_module
 from gitmojis.cli import get_commands, gitmojis_cli
 from gitmojis.model import Guide
+
+
+def test_gitmojis_cli_runs_from_package_main_module():
+    result = subprocess.run([sys.executable, "-m", "gitmojis"])
+
+    assert result.returncode == 0
 
 
 def test_get_commands_registers_command_from_commands_module(mocker):
