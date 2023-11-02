@@ -15,6 +15,11 @@ dependencies = []
 dev = [
   "pre-commit",
 ]
+lint = [
+  "black",
+  "mypy",
+  "ruff",
+]
 
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]
