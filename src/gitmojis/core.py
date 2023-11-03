@@ -7,7 +7,7 @@ from .exceptions import ResponseJsonError
 from .model import Gitmoji, Guide
 
 
-def fetch_guide() -> Guide:
+def fetch_guide(*, use_backup: bool = False) -> Guide:
     """Fetch the Gitmoji guide from the official Gitmoji API.
 
     This function sends a GET request to the Gitmoji API to retrieve the current state
@@ -30,8 +30,11 @@ def fetch_guide() -> Guide:
         if (gitmojis_json := response.json().get(defaults.GITMOJI_API_KEY)) is None:
             raise ResponseJsonError
     except requests.RequestException:
-        with defaults.GITMOJI_API_PATH.open(encoding="UTF-8") as f:
-            gitmojis_json = json.load(f)
+        if use_backup:
+            with defaults.GITMOJI_API_PATH.open(encoding="UTF-8") as f:
+                gitmojis_json = json.load(f)
+        else:
+            raise
 
     guide = Guide(gitmojis=[Gitmoji(**gitmoji_json) for gitmoji_json in gitmojis_json])
 
