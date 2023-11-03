@@ -27,11 +27,11 @@ jobs:
         uses: peter-evans/create-pull-request@v5.0.2
         with:
           token: ${{ secrets.CREATE_PR_ACTION_TOKEN }}
-          commit-message: 🍱 Update the backup file with the Gitmoji API
+          commit-message: 🍱 Update the backup file with the Gitmoji API data
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           branch: sync-backup-file-with-api
           branch-suffix: short-commit-hash
-          title: 🍱 Update the backup file with the Gitmoji API
+          title: 🍱 Update the backup file with the Gitmoji API data
           body: |
             ## Description
 
