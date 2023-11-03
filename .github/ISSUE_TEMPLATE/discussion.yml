@@ -1,0 +1,35 @@
+name: 💬 Discussion
+description:
+  Ask questions and discuss diverse ideas regarding the package.
+assignees:
+  - paduszyk
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thank you for your interest in our project! ♥️
+        Share your thoughts by filling in the form below.
+  - type: textarea
+    id: question-or-discussion-topic
+    attributes:
+      label: Question or discussion topic
+      description: |
+        Ask a question or present the topic you'd like to discuss.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: |
+        Before submitting the issue, confirm the following:
+      options:
+        - label: >-
+            I read and followed the project's
+            [Code of Conduct](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CODE_OF_CONDUCT.md) and
+            [Contributing Guide](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CONTRIBUTING.md).
+          required: true
+        - label: >-
+            This issue isn't a duplicate.
+            I checked that a similar discussion hadn't been started before.
+          required: true

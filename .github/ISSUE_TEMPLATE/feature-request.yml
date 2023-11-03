@@ -1,0 +1,56 @@
+name: ✨ Feature request
+description:
+  Propose a new functionality or enhance the existing one.
+labels:
+  - feature
+assignees:
+  - paduszyk
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thank you for sharing your idea with us! ♥️
+        Tell us more about it by filling in the form below.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Describe the feature you would like you add or update.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Suggested solution
+      description: |
+        If you know how to implement your idea, present it to us briefly.
+    validations:
+      required: true
+  - type: dropdown
+    id: pull-request
+    attributes:
+      label: Are you capable of creating a pull request to resolve this issue on your own?
+      description: |
+        Just let us know. If you agree, it doesn't mean you will have to.
+      options:
+        - "I'm not sure"
+        - "Yes"
+        - "No"
+      default: 0
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: |
+        Before submitting the issue, confirm the following:
+      options:
+        - label: >-
+            I read and followed the project's
+            [Code of Conduct](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CODE_OF_CONDUCT.md) and
+            [Contributing Guide](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CONTRIBUTING.md).
+          required: true
+        - label: >-
+            This issue isn't a duplicate.
+            I checked that the same or similar feature proposal hadn't been submitted before.
+          required: true
