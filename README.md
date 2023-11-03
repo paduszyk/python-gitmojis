@@ -9,6 +9,11 @@
 [![mypy](https://img.shields.io/badge/type--checked-mypy-blue?style=flat-square)][mypy]
 [![black](https://img.shields.io/badge/code%20style-black-black?style=flat-square)][black]
 
+[![pypi-status](https://img.shields.io/pypi/status/python-gitmojis?style=flat-square&logo=pypi&logoColor=white)][pypi]
+[![pypi-version](https://img.shields.io/pypi/v/python-gitmojis?style=flat-square&logo=pypi&logoColor=white)][pypi]
+[![pypi-python-version](https://img.shields.io/pypi/pyversions/python-gitmojis?style=flat-square&logo=python&logoColor=white)][pypi]
+[![pypi-license](https://img.shields.io/pypi/l/python-gitmojis?style=flat-square&label=license)][pypi]
+
 ## Summary
 
 This package provides a few simple utilities to apply the official
@@ -224,4 +229,5 @@ Released under the [MIT License][license].
 [nox]: https://github.com/wntrblm/nox
 [pep-557]: https://peps.python.org/pep-0557/
 [pre-commit.ci]: https://results.pre-commit.ci/latest/github/paduszyk/python-gitmojis/main
+[pypi]: https://pypi.org/project/python-gitmojis/
 [ruff]: https://github.com/astral-sh/ruff
