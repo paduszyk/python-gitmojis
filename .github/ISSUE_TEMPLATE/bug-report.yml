@@ -1,0 +1,90 @@
+name: 🐛 Bug report
+description:
+  File a bug report.
+labels:
+  - bug
+assignees:
+  - paduszyk
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thank you for reporting a bug! ♥️
+        Tell us more about by filling in the form below.
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      description:
+        What is the exact semantic version of the package displaying the bug?
+    validations:
+      required: true
+  - type: dropdown
+    id: python-version
+    attributes:
+      label: Python version
+      description: |
+        In which version of the Python interpreter does the issue arise?
+      options:
+        - "3.12"
+        - "3.11"
+        - "3.10"
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Platform
+      description: |
+        What is the platform on which you are using the package?
+      options:
+        - "Windows"
+        - "Linux"
+        - "MacOS"
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Describe the unexpected behavior being a matter of the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: |
+        Provide a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) demonstrating the issue.
+    validations:
+      required: true
+  - type: dropdown
+    id: pull-request
+    attributes:
+      label: Are you capable of creating a pull request to resolve this issue on your own?
+      description: |
+        Just let us know. If you agree, it doesn't mean you will have to.
+      options:
+        - "I'm not sure"
+        - "Yes"
+        - "No"
+      default: 0
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: |
+        Before submitting the issue, confirm the following:
+      options:
+        - label: >-
+            I read and followed the project's
+            [Code of Conduct](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CODE_OF_CONDUCT.md) and
+            [Contributing Guide](https://github.com/paduszyk/python-gitmojis/blob/main/.github/CONTRIBUTING.md).
+          required: true
+        - label: >-
+            This issue isn't a duplicate.
+            I checked that the same or very similar bug hadn't been reported before.
+          required: true
