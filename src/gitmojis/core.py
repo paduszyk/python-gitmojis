@@ -3,7 +3,7 @@ import json
 import requests
 
 from . import defaults
-from .exceptions import ResponseJsonError
+from .exceptions import ApiError, ResponseJsonError
 from .model import Gitmoji, Guide
 
 
@@ -29,12 +29,12 @@ def fetch_guide(*, use_backup: bool = False) -> Guide:
 
         if (gitmojis_json := response.json().get(defaults.GITMOJI_API_KEY)) is None:
             raise ResponseJsonError
-    except requests.RequestException:
+    except requests.RequestException as exc_info:
         if use_backup:
             with defaults.GITMOJI_API_PATH.open(encoding="UTF-8") as f:
                 gitmojis_json = json.load(f)
         else:
-            raise
+            raise ApiError from exc_info
 
     guide = Guide(gitmojis=[Gitmoji(**gitmoji_json) for gitmoji_json in gitmojis_json])
 

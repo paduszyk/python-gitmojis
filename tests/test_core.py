@@ -3,7 +3,7 @@ import requests
 
 from gitmojis import defaults
 from gitmojis.core import fetch_guide
-from gitmojis.exceptions import ResponseJsonError
+from gitmojis.exceptions import ApiError, ResponseJsonError
 from gitmojis.model import Guide
 
 
@@ -46,5 +46,6 @@ def test_fetch_guide_fall_back_to_backup_data_if_request_error_and_using_backup(
 def test_fetch_guide_raises_error_if_request_error_and_not_using_backup(mocker):
     mocker.patch("requests.get", side_effect=requests.RequestException)
 
-    with pytest.raises(requests.RequestException):
+    with pytest.raises(ApiError) as exc_info:
         fetch_guide(use_backup=False)
+    assert isinstance(exc_info.value.__cause__, requests.RequestException)
