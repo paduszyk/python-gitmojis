@@ -5,9 +5,9 @@ class GitmojisException(Exception):
         super().__init__(message or getattr(self.__class__, "message", ""))
 
 
-class ApiError(GitmojisException):
-    pass
+class ApiRequestError(GitmojisException):
+    message = "there was an issue when requesting the data from the API"
 
 
-class ResponseJsonError(ApiError):
+class ResponseJsonError(ApiRequestError):
     message = "unsupported format of the JSON data returned by the API"
