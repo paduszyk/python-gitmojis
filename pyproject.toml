@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "python-gitmojis"
-version = "0.0.0"
+version = "1.0.0"
 description = "😜 The official Gitmoji Guide in Python projects 🐍"
 readme = "README.md"
 authors = [
