@@ -8,6 +8,23 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "python-gitmojis"
 version = "0.0.0"
+description = "😜 The official Gitmoji Guide in Python projects 🐍"
+readme = "README.md"
+authors = [
+  { name = "Kamil Paduszyński", email = "paduszyk@gmail.com" },
+]
+keywords = ["emoji", "git", "gitmoji"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
 requires-python = ">= 3.10"
 dependencies = [
   "click",
