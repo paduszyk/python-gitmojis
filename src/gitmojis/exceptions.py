@@ -6,7 +6,7 @@ class GitmojisException(Exception):
 
 
 class ApiRequestError(GitmojisException):
-    message = "there was an issue when requesting the data from the API"
+    message = "request to get the Gitmoji data from the API failed"
 
 
 class ResponseJsonError(ApiRequestError):

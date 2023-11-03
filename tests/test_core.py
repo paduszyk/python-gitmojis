@@ -31,7 +31,7 @@ def test_fetch_guide_raises_error_if_gitmoji_api_key_not_in_response_json(mocker
         fetch_guide()
 
 
-def test_fetch_guide_fall_back_to_backup_data_if_request_error_and_using_backup(mocker):
+def test_fetch_guide_falls_back_to_backup_data_if_request_error_and_using_backup(mocker):  # fmt: skip
     mocker.patch("pathlib.Path.open", mocker.mock_open(read_data="[]"))
     mocker.patch("requests.get", side_effect=requests.RequestException)
 
