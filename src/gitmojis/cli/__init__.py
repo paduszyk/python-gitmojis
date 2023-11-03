@@ -18,15 +18,20 @@ def get_commands() -> list[click.Command]:
     name="gitmojis",
     commands=get_commands(),
 )
+@click.option(
+    "--use-backup",
+    is_flag=True,
+    help="Use the backup to fetch data if the API request fails.",
+)
 @click.version_option(
     package_name="python-gitmojis",
     prog_name="gitmojis",
 )
 @click.pass_context
-def gitmojis_cli(context: click.Context) -> None:
+def gitmojis_cli(context: click.Context, use_backup: bool) -> None:
     """Command-line interface for managing the official Gitmoji guide."""
     # Initialize the context object
     context.ensure_object(dict)
 
     # Pass the current state of the Gitmoji guide to the group context
-    context.obj["guide"] = fetch_guide()
+    context.obj["guide"] = fetch_guide(use_backup=use_backup)

@@ -48,6 +48,21 @@ def test_gitmojis_cli_passes_guide_to_context(mocker, cli_runner):
     assert result.exit_code == 0
 
 
+def test_gitmojis_cli_passes_use_backup_option_to_fetch_guide(mocker, cli_runner):
+    fetch_guide = mocker.patch("gitmojis.cli.fetch_guide", return_value=Guide())
+
+    @click.command()
+    @click.pass_context
+    def command(context):
+        pass
+
+    gitmojis_cli.add_command(command)
+
+    cli_runner.invoke(gitmojis_cli, ["--use-backup", "command"])
+
+    assert fetch_guide.call_args.kwargs == {"use_backup": True}
+
+
 def test_sync_command_dumps_api_data_to_backup_file(tmp_path, mocker, cli_runner):
     # Mock the backup file as empty file
     gitmoji_api_path = tmp_path / "gitmojis.json"
