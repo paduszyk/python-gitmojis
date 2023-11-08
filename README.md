@@ -26,7 +26,7 @@ commit and pull request messages seem feasible as well.
 
 - Handle individual Gitmojis and their lists using Python classes. 👔
 - Fetch Gitmoji data directly from the official [Gitmoji API][gitmoji-api]. 😜
-- Graceful degradation: If the API is unavailable, fall back to backup data. 🛟
+- Graceful degradation: If the API is unavailable, fall back to backup data. 🦺
 
 ## Installation
 
