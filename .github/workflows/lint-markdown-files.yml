@@ -20,7 +20,7 @@ jobs:
     - name: Check out 🎉
       uses: actions/checkout@v4.1.1
     - name: Run `markdownlint` 🎨
-      uses: DavidAnson/markdownlint-cli2-action@v13.0.0
+      uses: DavidAnson/markdownlint-cli2-action@v14.0.0
       with:
         config: .markdownlint.jsonc
         globs: '**/*.md'
