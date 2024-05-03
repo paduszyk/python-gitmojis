@@ -24,7 +24,7 @@ jobs:
         run:
           gitmojis sync
       - name: Create pull request 🎉
-        uses: peter-evans/create-pull-request@v6.0.4
+        uses: peter-evans/create-pull-request@v6.0.5
         with:
           token: ${{ secrets.CREATE_PR_ACTION_TOKEN }}
           commit-message: 🍱 Update the backup file with the Gitmoji API data
