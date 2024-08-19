@@ -3,7 +3,7 @@ import pytest
 from gitmojis.model import Gitmoji, Guide
 
 
-@pytest.fixture()
+@pytest.fixture
 def gitmojis_json():
     return [
         {
@@ -41,7 +41,7 @@ def gitmojis_json():
     ]
 
 
-@pytest.fixture()
+@pytest.fixture
 def guide(gitmojis_json):
     return Guide(gitmojis=[Gitmoji(**gitmoji_json) for gitmoji_json in gitmojis_json])
 
