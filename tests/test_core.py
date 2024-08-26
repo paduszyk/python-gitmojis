@@ -7,7 +7,7 @@ from gitmojis.exceptions import ApiRequestError, ResponseJsonError
 from gitmojis.model import Guide
 
 
-@pytest.fixture()
+@pytest.fixture
 def response(mocker):
     return mocker.Mock(spec_set=requests.Response)
 

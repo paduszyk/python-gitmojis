@@ -5,7 +5,7 @@ import pytest
 from gitmojis.model import Gitmoji
 
 
-@pytest.fixture()
+@pytest.fixture
 def gitmoji_json():
     return {
         "emoji": "🐛",
@@ -17,7 +17,7 @@ def gitmoji_json():
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def gitmoji(gitmoji_json):
     return Gitmoji(**gitmoji_json)
 
