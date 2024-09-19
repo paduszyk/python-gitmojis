@@ -13,7 +13,7 @@ jobs:
       - name: Check out 🎉
         uses: actions/checkout@v4.1.7
       - name: Set up Python 🐍
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5.2.0
         with:
           cache: pip
       - name: Get the package version 🔖
@@ -33,7 +33,7 @@ jobs:
       - name: Check out 🎉
         uses: actions/checkout@v4.1.7
       - name: Set up Python 🐍
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5.2.0
         with:
           cache: pip
       - name: Install PyPA `build` package 📦
