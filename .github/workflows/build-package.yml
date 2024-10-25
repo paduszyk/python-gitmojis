@@ -27,7 +27,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Set up Python 🐍
         uses: actions/setup-python@v5.3.0
         with:
@@ -51,7 +51,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Set up Python 🐍
         uses: actions/setup-python@v5.3.0
         with:

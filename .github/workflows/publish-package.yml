@@ -11,7 +11,7 @@ jobs:
       package-version: ${{ steps.package-version.outputs.package-version }}
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Set up Python 🐍
         uses: actions/setup-python@v5.3.0
         with:
@@ -31,7 +31,7 @@ jobs:
       id-token: write
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Set up Python 🐍
         uses: actions/setup-python@v5.3.0
         with:
@@ -55,7 +55,7 @@ jobs:
       contents: write
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Create tag 🔖
         run: |
           git config user.name "${{ github.actor }}"
@@ -72,7 +72,7 @@ jobs:
       contents: write
     steps:
       - name: Check out 🎉
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
       - name: Publish GitHub Release 📝
         uses: softprops/action-gh-release@v2.0.8
         with:
