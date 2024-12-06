@@ -69,6 +69,6 @@ jobs:
           nox -s test
       - name: Upload coverage reports to Codecov ⛱️
         if: ${{ matrix.platform == 'ubuntu-latest' }}
-        uses: codecov/codecov-action@v5.0.7
+        uses: codecov/codecov-action@v5.1.1
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
