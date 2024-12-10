@@ -44,7 +44,7 @@ jobs:
         run:
           python -m build
       - name: Publish to PyPI 🚀
-        uses: pypa/gh-action-pypi-publish@v1.12.2
+        uses: pypa/gh-action-pypi-publish@v1.12.3
   create-release-tag:
     needs:
       - get-release-tag
