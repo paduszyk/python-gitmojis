@@ -8,15 +8,14 @@ from gitmojis.cli import commands as commands_module
 from gitmojis.cli import get_commands, gitmojis_cli
 from gitmojis.model import Guide
 
-
 def test_gitmojis_cli_runs_as_entry_point():
-    result = subprocess.run(["gitmojis"])
+    result = subprocess.run(["gitmojis", "--version"])
 
     assert result.returncode == 0
 
 
 def test_gitmojis_cli_runs_as_python_script():
-    result = subprocess.run([sys.executable, "-m", "gitmojis"])
+    result = subprocess.run([sys.executable, "-m", "gitmojis", "--version"])
 
     assert result.returncode == 0
 
