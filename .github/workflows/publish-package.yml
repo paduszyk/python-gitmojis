@@ -12,14 +12,13 @@ jobs:
     steps:
       - name: Check out 🎉
         uses: actions/checkout@v4.2.2
-      - name: Set up Python 🐍
-        uses: actions/setup-python@v5.3.0
+      - name: Set up uv 🐍
+        uses: astral-sh/setup-uv@v9.0.0
         with:
-          cache: pip
+          enable-cache: true
       - name: Get the package version 🔖
         id: package-version
-        run:
-          echo "package-version=$(python ./scripts/package_version.py)" >> "$GITHUB_OUTPUT"
+        run: echo "package-version=$(uv run python ./scripts/package_version.py)" >> "$GITHUB_OUTPUT"
   pypi-publish:
     needs: get-release-tag
     name: Upload to PyPI
@@ -32,17 +31,12 @@ jobs:
     steps:
       - name: Check out 🎉
         uses: actions/checkout@v4.2.2
-      - name: Set up Python 🐍
-        uses: actions/setup-python@v5.3.0
+      - name: Set up uv 🐍
+        uses: astral-sh/setup-uv@v9.0.0
         with:
-          cache: pip
-      - name: Install PyPA `build` package 📦
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install build
+          enable-cache: true
       - name: Build the package 👷
-        run:
-          python -m build
+        run: uv build
       - name: Publish to PyPI 🚀
         uses: pypa/gh-action-pypi-publish@v1.12.3
   create-release-tag:
