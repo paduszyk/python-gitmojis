@@ -19,5 +19,9 @@
 
   // MD043/required-headings/required-headers - Required heading structure
   // https://github.com/DavidAnson/markdownlint/blob/main/doc/md043.md
-  "MD043": false
+  "MD043": false,
+
+  // MD059/descriptive-link-text - Link text should be descriptive
+  // https://github.com/DavidAnson/markdownlint/blob/main/doc/md059.md
+  "MD059": false
 }
