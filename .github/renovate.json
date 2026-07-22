@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "config:recommended",
+    ":disableDependencyDashboard"
+  ],
+  "commitMessagePrefix": "⬆️ ",
+  "lockFileMaintenance": {
+    "enabled": true
+  }
+}
