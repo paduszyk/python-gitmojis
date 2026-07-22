@@ -112,6 +112,7 @@ warn_unused_configs = true
 # https://docs.astral.sh/ruff/settings/
 
 [tool.ruff]
+[tool.ruff.lint]
 select = [
   "F",     # pyflakes
   "E",     # pycodestyle (errors)
@@ -127,12 +128,12 @@ select = [
   "Q",     # flake8-quotes
   "PTH",   # flake8-use-pathlib
 ]
-ignore = ["E501", "N818", "D1", "D205", "PT004", "PT016"]
+ignore = ["E501", "N818", "D1", "D205", "PT016"]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["gitmojis"]
 
 # Pytest
