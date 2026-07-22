@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 'v5.0.0'
+    rev: 'v6.0.0'
     hooks:
       - id: check-merge-conflict
       - id: check-toml
@@ -18,22 +18,22 @@ repos:
           - --no-sort-keys
       - id: trailing-whitespace
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: 'v0.17.2'
+    rev: 'v0.23.1'
     hooks:
     - id: markdownlint-cli2
-  - repo: https://github.com/psf/black
-    rev: '25.1.0'
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: '26.5.1'
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.15.0'
+    rev: 'v2.3.0'
     hooks:
       - id: mypy
         exclude: '^(?:(?!src).)*$'
         additional_dependencies:
           - types-requests
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: 'v0.9.10'
+    rev: 'v0.15.22'
     hooks:
       - id: ruff
         args:
