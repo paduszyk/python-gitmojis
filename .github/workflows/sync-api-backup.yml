@@ -21,7 +21,7 @@ jobs:
           uv sync --no-dev --locked
       - name: Run the `sync` command 🚀
         run:
-          uv run gitmojis sync
+          uv run --no-sync gitmojis sync
       - name: Create pull request 🎉
         uses: peter-evans/create-pull-request@v7.0.8
         with:
