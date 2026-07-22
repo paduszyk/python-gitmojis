@@ -38,7 +38,7 @@ jobs:
       - name: Build the package 👷
         run: uv build
       - name: Publish to PyPI 🚀
-        uses: pypa/gh-action-pypi-publish@v1.12.4
+        uses: pypa/gh-action-pypi-publish@v1.14.1
   create-release-tag:
     needs:
       - get-release-tag
