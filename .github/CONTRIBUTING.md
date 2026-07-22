@@ -43,58 +43,47 @@ When creating each pull request, it is crucial to adhere to the provided
 instructions:
 
 01. [Fork][fork] the repo and clone it to your machine.
-02. Go to the project's root directory to create the virtual environment and
-    activate it:
+02. Go to the project's root directory and sync development dependencies with
+    [uv][uv]:
 
     ```console
-    $ python -m venv .venv && . .venv/bin/activate
+    $ uv sync --locked
     ```
 
-    > In order to precisely reproduce the development environment, it is
-    > recommended to use the Python version specified in
-    > [`.python-version`][python-version]. The version given therein is checked
-    > out by default in all the CI environments.
+    > The command above creates a local virtual environment (`.venv`) and
+    > installs all dependencies required for development. If a compatible
+    > Python version is not available on your machine, `uv` will resolve and
+    > install one automatically.
 
-03. Install the package in editable (development) mode, along with all the
-    optional dependencies:
+03. Install [Pre-commit][pre-commit] hooks:
 
     ```console
-    $ pip install -e ".[dev,docs,lint,test]"
+    $ uv run pre-commit install
     ```
 
-04. Install [Pre-commit][pre-commit] hooks:
+04. Run linters and tests using [Nox][nox]:
 
     ```console
-    $ pre-commit install
-    ```
-
-05. Run linters and tests using [Nox][nox]:
-
-    ```console
-    $ nox
+    $ uv run nox
     ```
 
     This will check your fork's setup, the code quality with linters, run the
     existing tests in different Python environments, and measure the coverage.
-
-    > Note that you should have all the versions of Python installed on your
-    > machine. Consider using [`pyenv`][pyenv] to work with multiple Python
-    > interpreters.
 
     If you want to be more specific, you can only run the linting or testing
     suites via the respective Nox sessions. All the available sessions can be
     listed using the command:
 
     ```console
-    $ nox -l
+    $ uv run nox -l
     ```
 
     For more details, see [`noxfile.py`][noxfile] and [Nox docs][nox-docs].
     Besides, note that all the linters and testing tools are installed in the
-    virtual environment anyway. Therefore, feel absolutely free to use them
-    independently of Nox as well.
+    local uv-managed virtual environment. Therefore, feel absolutely free to
+    invoke them independently of Nox via `uv run`, e.g., `uv run ruff check .`.
 
-06. Check out a new feature branch and introduce changes.
+05. Check out a new feature branch and introduce changes.
 
     > All the changes affecting the codebase must be accompanied by relevant
     > unit tests and documentation updates. We always attempt to maintain 100%
@@ -102,7 +91,7 @@ instructions:
     > with tests missing (if they are needed, of course) have exactly zero
     > chance of being merged!
 
-07. Run Nox.
+06. Run Nox.
 
     If all the Nox sessions are successful and the changes are covered by tests,
     commit your changes and push them to remote.
@@ -112,7 +101,7 @@ instructions:
     > test everything locally before pushing to remote and opening a pull
     > request.
 
-08. [Create a pull request][create-pull-request] from the feature branch of your
+07. [Create a pull request][create-pull-request] from the feature branch of your
     fork to the `main` branch of the original repository.
 
     > Don't forget to mark the pull request with an appropriate Gitmoji! 😜
@@ -135,5 +124,4 @@ project's maintainers as soon as possible. 🧐
 [open-feature-request]: https://github.com/paduszyk/python-gitmojis/issues/new?template=feature-request.yml
 [open-issue]: https://github.com/paduszyk/python-gitmojis/issues/new/choose
 [pre-commit]: https://pre-commit.com
-[pyenv]: https://github.com/pyenv/pyenv
-[python-version]: https://github.com/paduszyk/python-gitmojis/blob/main/.python-version
+[uv]: https://docs.astral.sh/uv/
