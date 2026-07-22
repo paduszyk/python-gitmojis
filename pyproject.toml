@@ -27,31 +27,46 @@ classifiers = [
 ]
 requires-python = ">= 3.10"
 dependencies = [
-  "click",
-  "requests",
-]
-
-[project.optional-dependencies]
-dev = [
-  "nox",
-  "pre-commit",
-]
-lint = [
-  "black",
-  "mypy",
-  "ruff",
-  "types-requests",
-]
-test = [
-  "pytest",
-  "pytest-click",
-  "pytest-cov",
-  "pytest-custom-exit-code",
-  "pytest-mock",
+  "click>=8.4.2,<9.0.0",
+  "requests>=2.34.2,<3.0.0",
 ]
 
 [project.scripts]
 "gitmojis" = "gitmojis.__main__:main"
+
+[dependency-groups]
+black = [
+  "black>=26.5.1,<27.0.0",
+]
+dev = [
+  { include-group = "black" },
+  { include-group = "local" },
+  { include-group = "nox" },
+  { include-group = "mypy" },
+  { include-group = "ruff" },
+  { include-group = "test" },
+]
+local = [
+  "pre-commit>=4.6.1,<5.0.0",
+]
+nox = [
+  "nox>=2026.7.11,<2027.0.0",
+  "nox-uv>=0.8.0",
+]
+ruff = [
+  "ruff>=0.15.22,<0.16.0",
+]
+mypy = [
+  "mypy>=2.3.0,<3.0.0",
+  "types-requests>=2.33.0.20260712,<3.0.0.0",
+]
+test = [
+  "pytest>=9.1.1,<10.0.0",
+  "pytest-click>=1.1.0,<2.0.0",
+  "pytest-cov>=7.1.0,<8.0.0",
+  "pytest-custom-exit-code>=0.3.0,<0.4.0",
+  "pytest-mock>=3.15.1,<4.0.0",
+]
 
 [tool.setuptools.packages.find]
 include = ["gitmojis*"]

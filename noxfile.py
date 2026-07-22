@@ -1,35 +1,34 @@
 import nox
+import nox_uv
 
 # Nox sessions and configuration
 # https://nox.thea.codes/en/stable/config.html
 
+nox.options.default_venv_backend = "uv"
 
-@nox.session()
+
+@nox_uv.session(uv_only_groups=["black"])
 def black(session: nox.Session) -> None:
-    session.install("black")
     session.run("black", "--check", "--diff", ".")
 
 
-@nox.session()
+@nox_uv.session(uv_groups=["mypy"])
 def mypy(session: nox.Session) -> None:
-    session.install("-e", ".")
-    session.install("mypy")
     session.run("mypy", "--install-types", "--non-interactive", ".")
 
 
-@nox.session()
+@nox_uv.session(uv_only_groups=["ruff"])
 def ruff(session: nox.Session) -> None:
-    session.install("ruff")
     session.run("ruff", "check", "--diff", ".")
 
 
-@nox.session(
+@nox_uv.session(
+    uv_groups=["test"],
     python=[
         "3.10",
         "3.11",
         "3.12",
-    ]
+    ],
 )
 def test(session: nox.Session) -> None:
-    session.install("-e", ".[test]")
     session.run("pytest")
