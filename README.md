@@ -16,8 +16,6 @@
 
 ## Summary
 
-A test sentence added to trigger CI.
-
 This package provides a few simple utilities to apply the official
 [Gitmoji Guide][gitmoji-website] in Python libraries. It may potentially serve
 as a helper in projects related to version control systems, versioning, and
