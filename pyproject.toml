@@ -144,11 +144,6 @@ addopts = [
   "-ra",
   "-q",
   "--strict-markers",
-  "--cov=src/",
-  "--cov-branch",
-  "--cov-append",
-  "--cov-report=term-missing:skip-covered",
-  "--cov-report=xml",
   "--suppress-no-test-exit-code",
 ]
 pythonpath = [".", "src"]
@@ -156,6 +151,10 @@ testpaths = ["tests/"]
 
 # Coverage.py
 # https://coverage.readthedocs.io/en/latest/config.html
+
+[tool.coverage.run]
+branch = true
+source = ["src/"]
 
 [tool.coverage.report]
 exclude_also = [
@@ -171,3 +170,6 @@ exclude_also = [
   "raise AssertionError",
   "raise NotImplementedError",
 ]
+show_missing = true
+skip_covered = true
+skip_empty = true

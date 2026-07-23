@@ -33,4 +33,4 @@ def ruff(session: nox.Session) -> None:
     ],
 )
 def test(session: nox.Session) -> None:
-    session.run("pytest")
+    session.run("pytest", *session.posargs)
