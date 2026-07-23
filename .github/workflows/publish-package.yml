@@ -68,7 +68,7 @@ jobs:
       - name: Check out 🎉
         uses: actions/checkout@v7.0.1
       - name: Publish GitHub Release 📝
-        uses: softprops/action-gh-release@v2.6.2
+        uses: softprops/action-gh-release@v3.0.2
         with:
           tag_name: ${{ needs.get-release-tag.outputs.package-version }}
           generate_release_notes: true
