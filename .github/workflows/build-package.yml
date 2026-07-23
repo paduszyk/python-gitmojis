@@ -55,6 +55,6 @@ jobs:
         run:
           uv run --no-sync nox -s test
       - name: Upload coverage reports to Codecov ⛱️
-        uses: codecov/codecov-action@v5.5.5
+        uses: codecov/codecov-action@v7.0.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
