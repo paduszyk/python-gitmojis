@@ -26,6 +26,7 @@ body:
       description: |
         In which version of the Python interpreter does the issue arise?
       options:
+        - "3.15"
         - "3.14"
         - "3.13"
         - "3.12"
