@@ -64,7 +64,7 @@ mypy = [
 ]
 test = [
   "pytest>=9.1.1,<10.0.0",
-  "pytest-click>=1.1.0,<2.0.0",
+  "pytest-click>=2.0.0,<2.1.0",
   "pytest-cov>=7.1.0,<8.0.0",
   "pytest-custom-exit-code>=0.3.0,<0.4.0",
   "pytest-mock>=3.15.1,<4.0.0",
